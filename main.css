@@ -1,0 +1,521 @@
+  /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0b2240; /* azul escuro */
+      color: #e0e8f9; /* branco suave */
+      line-height: 1.5;
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #7ec8ff; /* azul claro */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: #a0d1ff;
+      outline: none;
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 16px 80px; /* bottom padding for footer + scroll top button */
+    }
+
+    /* Header fixo */
+    header {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      background-color: #07182f;
+      box-shadow: 0 3px 7px rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+      padding: 0 16px;
+      z-index: 1100;
+      user-select: none;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      color: #fff;
+      margin: 0;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    /* logo abaixo do header fixo */
+    .logo-container {
+      margin-top: 56px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0b2f64;
+      box-shadow: inset 0 2px 6px rgba(11,34,100,0.8);
+      user-select: none;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 0 0 12px 12px;
+      height: 56px; /* igual altura do cabeçalho */
+    }
+    .logo-container img {
+      max-height: 48px;
+      height: 48px;
+      width: auto;
+      max-width: 90%;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.7));
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+      cursor: default;
+      object-fit: contain;
+      user-select: none;
+    }
+    .logo-container img:hover,
+    .logo-container img:focus {
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    /* Menu hamburguer */
+    .hamburger {
+      cursor: pointer;
+      width: 28px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .hamburger span {
+      background: #7ec8ff;
+      display: block;
+      height: 3px;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Navigation menu (hamburguer dropdown) */
+    nav {
+      position: fixed;
+      top: 56px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      background-color: #07182f;
+      border-top: 1px solid #18335f;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      z-index: 1099;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.85);
+    }
+    nav.open {
+      max-height: 300px; /* suficiente para 6 itens */
+      border-bottom: 1px solid #18335f;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav li {
+      border-bottom: 1px solid #18335f;
+    }
+    nav li:last-child {
+      border-bottom: none;
+    }
+    nav a {
+      display: block;
+      padding: 14px 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #7ec8ff;
+      user-select: none;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #18335f;
+      outline: none;
+    }
+
+    /* Main deslocado para abaixo de header + logo */
+    main.container {
+      padding-top: 24px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Banner Rotativo */
+    .banner {
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 5px 14px rgba(7, 24, 47, 0.8);
+      background: linear-gradient(135deg, #12335c, #0b2240);
+      margin-bottom: 36px;
+    }
+    .banner-slide {
+      display: none;
+      position: relative;
+      color: #fff;
+    }
+    .banner-slide.active {
+      display: block;
+      animation: fadeInBanner 1s ease-in;
+    }
+    .banner-slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      filter: brightness(0.85);
+      transition: transform 0.6s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .banner-slide img:hover,
+    .banner-slide img:focus {
+      transform: scale(1.05);
+      outline: none;
+    }
+    .banner-text {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(11, 34, 64, 0.85);
+      padding: 14px 18px;
+      border-radius: 10px;
+      max-width: 90%;
+      font-weight: 700;
+      font-size: 1.3rem;
+      box-shadow: 0 2px 7px rgba(0,0,0,0.75);
+      user-select: none;
+      pointer-events: none;
+    }
+    @keyframes fadeInBanner {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Section Titles */
+    h2 {
+      margin-top: 36px;
+      margin-bottom: 16px;
+      font-size: 1.7rem;
+      border-bottom: 3px solid #7ec8ff;
+      padding-bottom: 6px;
+      font-weight: 700;
+      user-select: none;
+      color: #a9cffb;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    }
+
+    /* Notícias */
+    #noticias article {
+      position: relative;
+      background-color: rgba(7, 24, 47, 0.75);
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(7,24,47,0.9);
+      margin-bottom: 20px;
+      padding: 20px;
+      color: #e0e8f9;
+      transition: box-shadow 0.3s ease;
+      cursor: default;
+      overflow: hidden;
+    }
+    #noticias article:hover,
+    #noticias article:focus-within {
+      box-shadow: 0 5px 20px rgba(7,24,47,1);
+      outline: none;
+    }
+
+    /* Imagem de fundo personalizada para notícia */
+    #noticias article .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.4);
+      border-radius: 12px;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+      transition: filter 0.3s ease;
+    }
+    #noticias article:hover .background-image,
+    #noticias article:focus-within .background-image {
+      filter: brightness(0.6);
+    }
+    /* conteúdo em cima da imagem */
+    #noticias article .content {
+      position: relative;
+      z-index: 1;
+    }
+    #noticias article h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+      color: #7ec8ff;
+      user-select: text;
+    }
+    #noticias article p {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: #d7e3ff;
+      user-select: text;
+    }
+    #noticias article time {
+      display: block;
+      font-size: 0.85rem;
+      color: #99bce7;
+      font-style: italic;
+      user-select: text;
+    }
+
+    /* Área Literária */
+    #literaria article {
+      background-color: #07182f;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(7,24,47,0.9);
+      margin-bottom: 20px;
+      padding: 20px;
+      cursor: default;
+      transition: box-shadow 0.3s ease;
+    }
+    #literaria article:hover,
+    #literaria article:focus-within {
+      box-shadow: 0 5px 20px rgba(7,24,47,1);
+      outline: none;
+    }
+    #literaria article h3 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      color: #7ec8ff;
+      user-select: text;
+    }
+    #literaria article p {
+      font-style: italic;
+      margin: 10px 0;
+      color: #d7e3ff;
+      user-select: text;
+    }
+    #literaria .author-info {
+      font-size: 0.9rem;
+      color: #99bce7;
+      user-select: text;
+      line-height: 1.3;
+    }
+
+    /* Entrevistas */
+    #entrevistas article {
+      background-color: #07182f;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(7,24,47,0.9);
+      margin-bottom: 20px;
+      padding: 20px;
+      cursor: default;
+      transition: box-shadow 0.3s ease;
+    }
+    #entrevistas article:hover,
+    #entrevistas article:focus-within {
+      box-shadow: 0 5px 20px rgba(7,24,47,1);
+      outline: none;
+    }
+    #entrevistas article h3 {
+      margin-top: 0;
+      color: #7ec8ff;
+      font-size: 1.25rem;
+      user-select: text;
+    }
+    #entrevistas article p {
+      margin: 10px 0;
+      color: #d7e3ff;
+      user-select: text;
+    }
+    #entrevistas .interviewee {
+      font-size: 0.9rem;
+      color: #99bce7;
+      font-style: italic;
+      user-select: text;
+      line-height: 1.3;
+    }
+
+    /* Galeria */
+    #galeria {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    #galeria img, #galeria video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(7,24,47,0.9);
+      max-height: 180px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    #galeria img:hover, #galeria video:hover,
+    #galeria img:focus, #galeria video:focus {
+      transform: scale(1.07);
+      box-shadow: 0 7px 20px rgba(7,24,47,1);
+      outline: none;
+    }
+
+    /* Materiais */
+    #materiais {
+      margin-bottom: 40px;
+    }
+    #materiais h2 {
+      color: #a9cffb;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+      font-weight: 700;
+      border-bottom: 3px solid #7ec8ff;
+      padding-bottom: 6px;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+    #materiais ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #materiais li {
+      background: #07182f;
+      margin-bottom: 14px;
+      border-radius: 12px;
+      padding: 14px 18px;
+      box-shadow: 0 3px 10px rgba(7,24,47,0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    #materiais li:hover,
+    #materiais li:focus-within {
+      background: #0d2e6c;
+      box-shadow: 0 5px 18px rgba(7,24,47,1);
+      outline: none;
+    }
+    #materiais li a {
+      color: #7ec8ff;
+      font-weight: 600;
+      font-size: 1rem;
+      user-select: text;
+      flex-grow: 1;
+      text-decoration: none;
+    }
+    #materiais li a:hover,
+    #materiais li a:focus {
+      color: #a0d1ff;
+      text-decoration: underline;
+      outline: none;
+    }
+    #materiais li .file-type {
+      margin-left: 12px;
+      font-size: 0.9rem;
+      color: #a0d1ff;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    /* Sobre */
+    #sobre {
+      margin-bottom: 40px;
+      color: #d7e3ff;
+      font-size: 1.05rem;
+      user-select: text;
+      line-height: 1.5;
+    }
+    #sobre p {
+      margin: 0 0 14px;
+    }
+
+    /* Frase do dia */
+    #frase-dia {
+      margin: 28px 0 16px;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-align: center;
+      color: #a0cfff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+      user-select: none;
+    }
+
+    /* Botão voltar ao topo */
+    #btn-topo {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #7ec8ff;
+      color: #07182f;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 24px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(7, 24, 47, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      z-index: 1200;
+      transition: background-color 0.3s ease;
+    }
+    #btn-topo:hover,
+    #btn-topo:focus {
+      background-color: #62a7ff;
+      outline: none;
+    }
+
+    /* Responsive font adjustment */
+    @media (max-width: 360px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+      #materiais li a {
+        font-size: 0.95rem;
+      }
+      h2 {
+        font-size: 1.45rem;
+      }
+      #noticias article h3,
+      #literaria article h3,
+      #entrevistas article h3 {
+        font-size: 1.1rem;
+      }
+    }
