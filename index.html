@@ -26,6 +26,8 @@
 <!-- FullCalendar CSS -->
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 
 </head>
@@ -92,16 +94,57 @@ Acompanhe as novidades, leia os conteúdos, compartilhe com colegas e inspire-
       #sobre  p{
        text-align: justify;}
     </style>
+
+   
+
   
     <!-- Notícias -->
     <section id="noticias" aria-label="Notícias da escola">
-      <h2>Notícias</h2>
+      <!--<h2>Notícias</h2> !-->
+      <h2 style="display: flex; align-items: center; gap: 10px;">
+  Notícias
+
+  <button id="btn-pesquisa" 
+    style="
+      background: none; 
+      border: none; 
+      cursor: pointer; 
+      color: #FFD700; 
+      font-size: 20px;
+    " 
+    aria-label="Pesquisar">
+    <i class="fas fa-search"></i>
+  </button>
+
+  <input 
+    type="text" 
+    id="barra-pesquisa" 
+    placeholder="Pesquisar..." 
+    style="
+      display: none;
+      padding: 6px 10px;
+      border: 2px solid #001F3F;
+      border-radius: 20px;
+      outline: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      color: #001F3F;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    "
+  />
+</h2>
+
       <article tabindex="0">
         <img class="background-image" src="img membros quadrilha.jpg" alt="" aria-hidden="true" />
         <div class="content">
           <h3>Quadrilha Junina Sertão de Diamantes</h3>
           <p>Pela primeira vez, tivemos a belíssima apresentação da nossa Quadrilha Junina Sertão de Diamantes, que chegou encantando com muito brilho e entusiasmo! E claro, não podia faltar a tradicional quadrilha improvisada, que colocou todo mundo pra dançar no arrasta-pé!</p>
           <time datetime="2024-05-20">21 de junho de 2025</time>
+          <style>
+      #noticias  p{
+       text-align: justify;}
+    </style>
         </div>
       </article>
       <article tabindex="0">
@@ -254,7 +297,7 @@ Acompanhe as novidades, leia os conteúdos, compartilhe com colegas e inspire-
 
 <!--<a href="calendario.html">...</a>!-->
 <section id="calendario">
-  <h2 style="text-align:center; color:#7ec8ff;">Calendário de Eventos e Provas<br>
+  <h2 style="text-align:center; color:#7ec8ff;">Calendário de Eventos<br>
     Junho 2025
   </h2>
 
@@ -325,13 +368,13 @@ Acompanhe as novidades, leia os conteúdos, compartilhe com colegas e inspire-
     --highlight: #ffc107;
     --background: #0b2240;
     --card: #e4d7d7;
-    --hover: #e7cf93;
-    --event: #e7cf93;
-    --text: #0b2240;
+    --hover: #0e1b4d;
+    --event: #878192;
+    --text: #0a1d36;
 }
 .holiday {
-  background-color: #ffb3b3;
-  color: #b30000;
+  background-color: #a50f0f;
+  color: #080808;
   font-weight: bold;
 }
 #calendario {
@@ -459,6 +502,43 @@ function showEvent(event) {
   </footer>
   <button id="btn-topo" aria-label="Voltar ao topo" title="Voltar ao topo" type="button">⬆</button>
 
+  
+<script>
+  const btnPesquisa = document.getElementById('btn-pesquisa');
+  const barraPesquisa = document.getElementById('barra-pesquisa');
+  const noticias = document.querySelectorAll('#noticias article');
+
+  btnPesquisa.addEventListener('click', () => {
+    if (barraPesquisa.style.display === 'none' || barraPesquisa.style.display === '') {
+      barraPesquisa.style.display = 'inline-block';
+      barraPesquisa.focus();
+    } else {
+      barraPesquisa.style.display = 'none';
+      barraPesquisa.value = '';
+      filtrarNoticias('');
+    }
+  });
+
+  barraPesquisa.addEventListener('input', function () {
+    filtrarNoticias(this.value);
+  });
+
+  function filtrarNoticias(termo) {
+    const termoLower = termo.toLowerCase();
+
+    noticias.forEach(noticia => {
+      const titulo = noticia.querySelector('h3').innerText.toLowerCase();
+      const texto = noticia.querySelector('p').innerText.toLowerCase();
+
+      if (titulo.includes(termoLower) || texto.includes(termoLower)) {
+        noticia.style.display = 'block';
+      } else {
+        noticia.style.display = 'none';
+      }
+    });
+  }
+</script>
+
 
 </body>
 
@@ -474,12 +554,12 @@ function showEvent(event) {
   <footer style="background-color: #001F3F; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
   <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
     
-    <!-- Sobre -->
+  
     <div style="flex: 1 1 250px;">
       <h3 style="margin-bottom: 15px; color: #FFD700;">ETSC NEWS</h3>
-      <p style="line-height: 1.4; color: #f0f0f0;">
-        Plataforma desenvolvida por alunos da ETSC para divulgar notícias, eventos e informações da nossa escola.
-      </p>
+       <p style="line-height: 1.4; color: #f0f0f0;">
+      Plataforma desenvolvida por alunos da ETSC para divulgar notícias, eventos e informações da nossa escola.
+    </p>
     </div>
 
    
@@ -489,11 +569,12 @@ function showEvent(event) {
       <h4 style="margin-bottom: 15px; color: #FFD700;">Contato</h4>
       <p style="color: #f0f0f0; line-height: 1.6;">
         📍 Endereço: Universidade Federal de Campina Grande (UFCG) – Campus Cajazeiras
-R. Sérgio Moreira de Figueiredo Fernandes, s/n, Casas Populares, Cajazeiras - PB, 58900-000<br>
+R. Sérgio Moreira de Figueiredo Fernandes, s/n, Casas Populares, Cajazeiras - PB, 58900-000<br></p>
+
          <a href="mailto:gremioestudantilluizgualberto@gmail.com" style="color: #f0f0f0; text-decoration: none;">
   ✉️ gremioestudantilluizgualberto@gmail.com
 </a>
-      </p>
+      
     </div>
 
     <!-- Redes Sociais -->
