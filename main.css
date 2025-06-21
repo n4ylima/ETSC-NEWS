@@ -2,9 +2,14 @@
     *, *::before, *::after {
       box-sizing: border-box;
     }
+  h1, h2, h3 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+  }
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 400;
       background-color: #0b2240; /* azul escuro */
       color: #e0e8f9; /* branco suave */
       line-height: 1.5;

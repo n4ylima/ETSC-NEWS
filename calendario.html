@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendário Escolar</title>
+<style>
+    :root {
+        --primary: #0077ff;
+        --background: #f9f9f9;
+        --card: #fff;
+        --hover: #e6f0ff;
+        --event: #ffe0b2;
+        --text: #333;
+    }
+
+    body {
+        background-color: var(--background);
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 20px;
+        color: var(--text);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .calendar {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: var(--card);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .calendar table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        color: var(--primary);
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+
+    td {
+        width: 14.2%;
+        height: 80px;
+        text-align: center;
+        vertical-align: top;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        position: relative;
+    }
+
+    td:hover {
+        background-color: var(--hover);
+    }
+
+    .event {
+        background-color: var(--event);
+    }
+
+    .day-number {
+        font-weight: bold;
+        margin-top: 5px;
+        display: block;
+    }
+
+    #event-info {
+        max-width: 700px;
+        margin: 20px auto;
+        background: var(--card);
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        display: none;
+    }
+
+    #event-info h2 {
+        margin-top: 0;
+    }
+</style>
+</head>
+<body>
+
+<h1>Calendário Escolar - Junho 2025</h1>
+
+<div class="calendar">
+<table>
+    <tr>
+        <th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
+    </tr>
+    <tr>
+        <td></td><td></td><td></td><td></td><td></td>
+        <td class="event" onclick="showEvent('Prova de Matemática - 6 de Junho')">
+            <span class="day-number">6</span>
+        </td>
+        <td><span class="day-number">7</span></td>
+    </tr>
+    <tr>
+        <td><span class="day-number">8</span></td>
+        <td><span class="day-number">9</span></td>
+        <td class="event" onclick="showEvent('Apresentação de Projeto - 10 de Junho')">
+            <span class="day-number">10</span>
+        </td>
+        <td><span class="day-number">11</span></td>
+        <td><span class="day-number">12</span></td>
+        <td><span class="day-number">13</span></td>
+        <td><span class="day-number">14</span></td>
+    </tr>
+    <tr>
+        <td><span class="day-number">15</span></td>
+        <td class="event" onclick="showEvent('Reunião de Pais - 16 de Junho')">
+            <span class="day-number">16</span>
+        </td>
+        <td><span class="day-number">17</span></td>
+        <td><span class="day-number">18</span></td>
+        <td><span class="day-number">19</span></td>
+        <td class="event" onclick="showEvent('Prova de História - 20 de Junho')">
+            <span class="day-number">20</span>
+        </td>
+        <td><span class="day-number">21</span></td>
+    </tr>
+    <tr>
+        <td><span class="day-number">22</span></td>
+        <td><span class="day-number">23</span></td>
+        <td><span class="day-number">24</span></td>
+        <td><span class="day-number">25</span></td>
+        <td><span class="day-number">26</span></td>
+        <td><span class="day-number">27</span></td>
+        <td><span class="day-number">28</span></td>
+    </tr>
+    <tr>
+        <td><span class="day-number">29</span></td>
+        <td><span class="day-number">30</span></td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+</table>
+</div>
+
+<div id="event-info">
+    <h2>Evento do Dia</h2>
+    <p id="event-text"></p>
+</div>
+
+<script>
+function showEvent(event) {
+    const infoBox = document.getElementById('event-info');
+    const text = document.getElementById('event-text');
+    text.innerText = event;
+    infoBox.style.display = 'block';
+}
+</script>
+
+</body>
+</html>

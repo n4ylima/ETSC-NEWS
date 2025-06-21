@@ -6,10 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ETSC News</title>
   <!-- Fonte Montserrat Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    h1, h2, h3 {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+    }
+    body {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 400;
+    }
+  </style>
+ 
 
   <script src="bosta.js" defer></script>
   <link rel="stylesheet" href="main.css">
+ <!--<link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.js'></script>!-->
+<!-- FullCalendar CSS -->
+
+
+
+
 </head>
 <body>
   <header>
@@ -27,9 +45,9 @@
       <li><a href="#home" tabindex="-1">Home</a></li>
       <li><a href="#noticias" tabindex="-1">Notícias</a></li>
       <li><a href="#literaria" tabindex="-1">Área Literária</a></li>
-  
       <li><a href="#galeria" tabindex="-1">Galeria</a></li>
       <li><a href="#materiais" tabindex="-1">Materiais</a></li>
+      <li><a href="#calendario" tabindex="-1">Calendário</a></li>
       
     </ul>
   </nav>
@@ -79,6 +97,14 @@ Acompanhe as novidades, leia os conteúdos, compartilhe com colegas e inspire-
     <section id="noticias" aria-label="Notícias da escola">
       <h2>Notícias</h2>
       <article tabindex="0">
+        <img class="background-image" src="img membros quadrilha.jpg" alt="" aria-hidden="true" />
+        <div class="content">
+          <h3>Quadrilha Junina Sertão de Diamantes</h3>
+          <p>Pela primeira vez, tivemos a belíssima apresentação da nossa Quadrilha Junina Sertão de Diamantes, que chegou encantando com muito brilho e entusiasmo! E claro, não podia faltar a tradicional quadrilha improvisada, que colocou todo mundo pra dançar no arrasta-pé!</p>
+          <time datetime="2024-05-20">21 de junho de 2025</time>
+        </div>
+      </article>
+      <article tabindex="0">
         <img class="background-image" src="50 anos etsc img.jpg" alt="" aria-hidden="true" />
         <div class="content">
           <h3>50 anos da Escola Técnica de Saúde de Cajazeiras</h3>
@@ -110,6 +136,8 @@ Acompanhe as novidades, leia os conteúdos, compartilhe com colegas e inspire-
           <time datetime="2024-05-20">19 de maio de 2025</time>
         </div>
       </article>
+
+       
 
        
    
@@ -164,6 +192,34 @@ Acompanhe as novidades, leia os conteúdos, compartilhe com colegas e inspire-
         Seu navegador não suporta vídeo.
       </video>
       <img src="cadu tralaleiro tralala.jpg" alt="mais melhor" tabindex="0" />
+      <img src="imagem xaxado.jpg" alt="atletismo" tabindex="0" />
+      <video controls preload="metadata" aria-label="Vídeo de evento da escola" tabindex="0">
+        <source src="video xaxado.mp4" type="video/webm" />
+        Seu navegador não suporta vídeo.
+      </video>
+       <img src="imagem sara e marcia.jpg" alt="atletismo" tabindex="0" />
+        <video controls preload="metadata" aria-label="Vídeo de evento da escola" tabindex="0">
+        <source src="video corrida do saco.mp4" type="video/webm" />
+        Seu navegador não suporta vídeo.
+      </video>
+        <img src="imagem jhon jhon.jpg" alt="atletismo" tabindex="0" />
+         <img src="imagem são joaao.jpg" alt="atletismo" tabindex="0" />
+
+         <video controls preload="metadata" aria-label="Vídeo de evento da escola" tabindex="0">
+        <source src="video ovo.mp4" type="video/webm" />
+        Seu navegador não suporta vídeo.
+      </video>
+
+         <video controls preload="metadata" aria-label="Vídeo de evento da escola" tabindex="0">
+        <source src="video quadrilha.mp4" type="video/webm" />
+        Seu navegador não suporta vídeo.
+      </video>
+
+          <video controls preload="metadata" aria-label="Vídeo de evento da escola" tabindex="0">
+        <source src="video guerra corda.mp4" type="video/webm" />
+        Seu navegador não suporta vídeo.
+      </video>
+        
     </section>
 
     <!-- Materiais -->
@@ -193,7 +249,175 @@ Acompanhe as novidades, leia os conteúdos, compartilhe com colegas e inspire-
     </section>
     </main>
 
-    <!-- Sobre -->
+   <!---- <div id='calendar' style="max-width: 900px; margin: 40px auto; background: white; padding: 20px; border-radius: 10px;"></div><!---->
+
+
+<!--<a href="calendario.html">...</a>!-->
+<section id="calendario">
+  <h2 style="text-align:center; color:#7ec8ff;">Calendário de Eventos e Provas<br>
+    Junho 2025
+  </h2>
+
+  <div class="calendar">
+    <table>
+     <table>
+  <tr>
+    <th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
+  </tr>
+  <tr>
+    <td><span class="day-number">1</span></td>
+    <td><span class="day-number">2</span></td>
+    <td><span class="day-number">3</span></td>
+    <td class="event" onclick="showEvent(' Seminário de Avaliação Parcial dos Relatórios de ICT&I- 4 de Junho')"><span class="day-number">4</span></td>
+    <td><span class="day-number">5</span></td>
+    <td><span class="day-number">6</span>
+    </td>
+    <td><span class="day-number">7</span></td>
+  </tr>
+  <tr>
+    <td><span class="day-number">8</span></td>
+    <td><span class="day-number">9</span></td>
+    <td><span class="day-number">10</span>
+    </td>
+    <td><span class="day-number">11</span></td>
+    <td class="event"onclick="showEvent(' Reunião de Pais - 12 de Junho')">
+      <span class="day-number">12</span></td>
+    <td><span class="day-number">13</span></td>
+    <td><span class="day-number">14</span></td>
+  </tr>
+  <tr>
+    <td><span class="day-number">15</span></td>
+    <td><span class="day-number">16</span>
+    </td>
+    <td class="event"onclick="showEvent(' Inauguração do ginásio - 17 de Junho')"><span class="day-number">17</span></td>
+    <td class="event"onclick="showEvent(' Festa Junina - 18 de Junho')"><span class="day-number">18</span></td>
+    <td class="holiday"><span class="day-number">19</span></td>
+    <td class="holiday"><span class="day-number">20</span></td>
+    <td class="holiday"><span class="day-number">21</span></td>
+  </tr>
+  <tr>
+    <td class="holiday"><span class="day-number">22</span></td>
+    <td class="holiday"><span class="day-number">23</span></td>
+    <td class="holiday"><span class="day-number">24</span></td>
+    <td><span class="day-number">25</span></td>
+    <td><span class="day-number">26</span></td>
+    <td><span class="day-number">27</span></td>
+    <td><span class="day-number">28</span></td>
+  </tr>
+  <tr>
+    <td><span class="day-number">29</span></td>
+    <td><span class="day-number">30</span></td>
+    <td></td><td></td><td></td><td></td><td></td>
+  </tr>
+</table>
+    </table>
+  </div>
+
+  <div id="event-info">
+      <h3>Evento do Dia</h3>
+      <p id="event-text"></p>
+  </div>
+</section>
+
+<style>
+:root {
+    --primary: #0e1b4d;
+    --highlight: #ffc107;
+    --background: #0b2240;
+    --card: #e4d7d7;
+    --hover: #e7cf93;
+    --event: #e7cf93;
+    --text: #0b2240;
+}
+.holiday {
+  background-color: #ffb3b3;
+  color: #b30000;
+  font-weight: bold;
+}
+#calendario {
+    padding: 40px 20px;
+    background-color: #0b2240;
+}
+
+.calendar {
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: var(--card);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: var(--primary);
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+td {
+    width: 14.2%;
+    height: 80px;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    color: var(--text);
+}
+
+td:hover {
+    background-color: var(--hover);
+}
+
+.event {
+    background-color: var(--event);
+}
+
+.day-number {
+    font-weight: bold;
+    margin-top: 5px;
+    display: block;
+    font-size: 18px;
+}
+
+#event-info {
+    max-width: 700px;
+    margin: 20px auto;
+    background: var(--card);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: none;
+    border-left: 5px solid var(--primary);
+}
+
+#event-info h3 {
+    margin-top: 0;
+    color: #0e1b4d;
+}
+#event-info p {
+  color:#0e1b4d;
+  font-size: 16px; 
+
+}
+</style>
+
+<script>
+function showEvent(event) {
+    const infoBox = document.getElementById('event-info');
+    const text = document.getElementById('event-text');
+    text.innerText = event;
+    infoBox.style.display = 'block';
+}
+</script>
+
     
 
   <footer>
@@ -209,7 +433,7 @@ Acompanhe as novidades, leia os conteúdos, compartilhe com colegas e inspire-
       color: #7ec8ff;
       text-align: center;
       padding: 16px 12px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-size: 0.9rem;
       user-select: none;
       box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.1);
@@ -235,18 +459,63 @@ Acompanhe as novidades, leia os conteúdos, compartilhe com colegas e inspire-
   </footer>
   <button id="btn-topo" aria-label="Voltar ao topo" title="Voltar ao topo" type="button">⬆</button>
 
-  
+
 </body>
 
 
 
+
+
+
+
 <body>
-  <footer class="footer" role="contentinfo">
+
+
+  <footer style="background-color: #001F3F; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+    
+    <!-- Sobre -->
+    <div style="flex: 1 1 250px;">
+      <h3 style="margin-bottom: 15px; color: #FFD700;">ETSC NEWS</h3>
+      <p style="line-height: 1.4; color: #f0f0f0;">
+        Plataforma desenvolvida por alunos da ETSC para divulgar notícias, eventos e informações da nossa escola.
+      </p>
+    </div>
+
    
-    <p>Contato: <a href="mailto:gremioestudantilluizgualberto@gmail.com" aria-label="Enviar email para o Grêmio Estudantil">gremioestudantilluizgualberto@gmail.com</a><
-    <p> designer da logo by: carlos eduardo</p>
-     <p><h5> desenvolvido por <a href="https://wa.me/558897388929" alvo="_em branco">Nayara Alves</a></h5></p>
-  </footer>
+
+    <!-- Contato -->
+    <div style="flex: 1 1 250px;">
+      <h4 style="margin-bottom: 15px; color: #FFD700;">Contato</h4>
+      <p style="color: #f0f0f0; line-height: 1.6;">
+        📍 Endereço: Universidade Federal de Campina Grande (UFCG) – Campus Cajazeiras
+R. Sérgio Moreira de Figueiredo Fernandes, s/n, Casas Populares, Cajazeiras - PB, 58900-000<br>
+         <a href="mailto:gremioestudantilluizgualberto@gmail.com" style="color: #f0f0f0; text-decoration: none;">
+  ✉️ gremioestudantilluizgualberto@gmail.com
+</a>
+      </p>
+    </div>
+
+    <!-- Redes Sociais -->
+    <div style="flex: 1 1 200px;">
+      <h4 style="margin-bottom: 15px; color: #FFD700;">Siga-nos</h4>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <a href="https://www.instagram.com/gremioestudantil.etsc?igsh=aDRzc3N4MWFpeDFs" style="color: #f0f0f0; font-size: 18px; text-decoration: none;">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top: 1px solid #fff; margin-top: 30px; padding-top: 15px; text-align: center; color: #f0f0f0;">
+    © 2025 ETSC NEWS. Todos os direitos reservados.
+     Desenvolvido por 
+    <a href="https://github.com/N4yaraAlves" target="_blank" style="color: #FFD700; text-decoration: none;">
+      Nayara Alves
+    </a>.
+
+  </div>
+</footer>
+
+ 
 </body>
 </html>
 
