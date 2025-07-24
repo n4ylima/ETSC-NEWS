@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Olimpíada Brasileira de História - ETSC NEWS</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body class="pagina-noticia">
+  <main class="conteudo-noticia">
+    
+    <h1 class="titulo-noticia">Olímpiada Brasileira de História</h1>
+    
+    <img class="imagem-noticia" src="onhb.jpg" alt="Imagem da notícia">
+
+    <button id="btn-compartilhar" class="btn-compartilhar">Compartilhar</button>
+    
+    
+    <article class="texto-noticia">
+      <p>18 estudantes da ETSC foram aprovados para a 2ª fase da Olimpíada Nacional em História do Brasil (ONHB), organizados em 6 equipes, todas orientadas pela professora Mestra Celda Rejane
+      </p>
+      
+    </article>
+
+<div id="giscus_container"></div>
+<script src="https://giscus.app/client.js"
+        data-repo="n4ylima/ETSC-NEWS"
+        data-repo-id="R_kgDOOtkf8Q"
+        data-category="General"
+        data-category-id="DIC_kwDOOtkf8c4CryfS"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="cobalt"
+        data-lang="pt"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+   <!--- <section class="comentarios">
+      <h2>🗨️ Comentários</h2>
+      <form id="formComentario">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <textarea id="mensagem" placeholder="Digite seu comentário" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="lista-comentarios"></div>
+    </section> !-->
+
+    <section class="recomendacoes">
+      <h2>📚 Outras notícias</h2>
+      <div class="outras-noticias">
+        <a href="camiloreitor.html" class="mini-noticia">
+          <img src="camilo reitor img.png" />
+          <h3>Começa mandato do professor Camilo Farias como novo reitor da UFCG</h3>
+        </a>
+        <a href="newsetscdestaque.html" class="mini-noticia">
+          <img src="foto escola.png" />
+        <h3> ETSC/UFCG é destaque mais uma vez! </h3>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    
+
+    document.getElementById('btn-compartilhar').addEventListener('click', function() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      text: 'Confira esta notícia interessante!',
+      url: window.location.href
+    })
+    .then(() => console.log('Compartilhado com sucesso!'))
+    .catch((error) => console.log('Erro ao compartilhar:', error));
+  } else {
+    alert('Seu navegador não suporta o compartilhamento nativo. Copie o link manualmente: ' + window.location.href);
+  }
+});
+
+
+
+
+
+  </script>
+</body>
+</html>

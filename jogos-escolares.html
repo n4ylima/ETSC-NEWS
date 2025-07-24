@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> jogos escolares ETSC NEWS</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body class="pagina-noticia">
+  <main class="conteudo-noticia">
+    
+    <h1 class="titulo-noticia">Jogos Escolares</h1>
+    
+    <img class="imagem-noticia" src="badminton2.png" alt="Imagem da notícia">
+
+    <button id="btn-compartilhar" class="btn-compartilhar">Compartilhar</button>
+    
+    
+    <article class="texto-noticia">
+      <p>No dia 10/05 (sábado) os discentes do Curso Ensino Médio Luís Henrique (1º Ano) e César Filho (2º Ano) participaram das competições da modalidade de Badminton dos Jogos Escolares da Paraíba na ECI Prof Cirspim Coelho acompanhados da Diretora da ETSC/UFCG Profa Danielly Lopes e supervisão do professor de Educação Física Prof Raony Lopes. Foi a primeira participação da ETSC na referida modalidade em Jogos Escolares.</p>
+      
+    </article>
+
+<div id="giscus_container"></div>
+<script src="https://giscus.app/client.js"
+        data-repo="n4ylima/ETSC-NEWS"
+        data-repo-id="R_kgDOOtkf8Q"
+        data-category="General"
+        data-category-id="DIC_kwDOOtkf8c4CryfS"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="cobalt"
+        data-lang="pt"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+   <!--- <section class="comentarios">
+      <h2>🗨️ Comentários</h2>
+      <form id="formComentario">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <textarea id="mensagem" placeholder="Digite seu comentário" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="lista-comentarios"></div>
+    </section> !-->
+
+    <section class="recomendacoes">
+      <h2>📚 Outras notícias</h2>
+      <div class="outras-noticias">
+        <a href="onhb.html" class="mini-noticia">
+          <img src="onhb.jpg" />
+          <h3>Olimpíada Brasileira de História</h3>
+        </a>
+        <a href="camiloreitor.html" class="mini-noticia">
+          <img src="camilo reitor img.png" />
+          <h3>Começa mandato do proefessor Camilo Farias como novo reitor da UFCG</h3>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    
+
+    document.getElementById('btn-compartilhar').addEventListener('click', function() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      text: 'Confira esta notícia interessante!',
+      url: window.location.href
+    })
+    .then(() => console.log('Compartilhado com sucesso!'))
+    .catch((error) => console.log('Erro ao compartilhar:', error));
+  } else {
+    alert('Seu navegador não suporta o compartilhamento nativo. Copie o link manualmente: ' + window.location.href);
+  }
+});
+
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Quadrilha Junina Sertão de Diamantes - ETSC NEWS</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body class="pagina-noticia">
+  <main class="conteudo-noticia">
+    
+    <h1 class="titulo-noticia">Quadrilha Junina Sertão de Diamantes </h1>
+    
+    <img class="imagem-noticia" src="img membros quadrilha.jpg" alt="Imagem da notícia">
+
+    <button id="btn-compartilhar" class="btn-compartilhar">Compartilhar</button>
+    
+    
+    <article class="texto-noticia">
+      <p>Pela primeira vez, tivemos a belíssima apresentação da nossa Quadrilha Junina Sertão de Diamantes que chegou encantando com muito brilho e entusiasmo! E claro, não podia faltar a tradicional quadrilha improvisada, que colocou todo mundo pra dançar no arrasta-pé!</p>
+      
+    </article>
+
+<div id="giscus_container"></div>
+<script src="https://giscus.app/client.js"
+        data-repo="n4ylima/ETSC-NEWS"
+        data-repo-id="R_kgDOOtkf8Q"
+        data-category="General"
+        data-category-id="DIC_kwDOOtkf8c4CryfS"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="cobalt"
+        data-lang="pt"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+   <!--- <section class="comentarios">
+      <h2>🗨️ Comentários</h2>
+      <form id="formComentario">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <textarea id="mensagem" placeholder="Digite seu comentário" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="lista-comentarios"></div>
+    </section> !-->
+
+    <section class="recomendacoes">
+      <h2>📚 Outras notícias</h2>
+      <div class="outras-noticias">
+        <a href="jogos-escolares.html" class="mini-noticia">
+          <img src="badminton2.png" />
+          <h3>Jogos Eacolares</h3>
+        </a>
+        <a href="onhb.html" class="mini-noticia">
+          <img src="onhb.jpg" />
+          <h3>Olimpíada Brasileira de História</h3>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    
+
+    document.getElementById('btn-compartilhar').addEventListener('click', function() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      text: 'Confira esta notícia interessante!',
+      url: window.location.href
+    })
+    .then(() => console.log('Compartilhado com sucesso!'))
+    .catch((error) => console.log('Erro ao compartilhar:', error));
+  } else {
+    alert('Seu navegador não suporta o compartilhamento nativo. Copie o link manualmente: ' + window.location.href);
+  }
+});
+
+
+
+
+
+  </script>
+</body>
+</html>

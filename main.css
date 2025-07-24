@@ -242,7 +242,13 @@
     }
 
     /* Notícias */
+
     #noticias article {
+     
+
+ min-height: 250px; /* ou um valor que funcione para você */
+
+
       position: relative;
       background-color: rgba(7, 24, 47, 0.75);
       border-radius: 12px;
@@ -262,6 +268,9 @@
 
     /* Imagem de fundo personalizada para notícia */
     #noticias article .background-image {
+
+
+
       position: absolute;
       top: 0;
       left: 0;
@@ -304,6 +313,25 @@
       font-style: italic;
       user-select: text;
     }
+    #noticias article time {
+  font-size: 0.85rem;
+  color: #99bce7;
+  font-style: italic;
+  user-select: text;
+  align-self: flex-start; /* Se quiser alinhado à esquerda, ou flex-end para direita */
+  margin-top: auto;
+}
+#noticias article::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
 
     /* Área Literária */
     #literaria article {
@@ -399,6 +427,9 @@
 
     /* Materiais */
     #materiais {
+      width: 100%;
+max-width: 100%;
+
       margin-bottom: 40px;
     }
     #materiais h2 {
@@ -508,7 +539,7 @@
     }
 
     /* Responsive font adjustment */
-    @media (max-width: 360px) {
+    @media (max-width: 1200px) { 
       header h1 {
         font-size: 1.4rem;
       }
@@ -524,3 +555,165 @@
         font-size: 1.1rem;
       }
     }
+    @media (min-width: 769px) {
+  #noticias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+    }
+    body.pagina-noticia {
+  background-color: #07182f;
+  color: #e0f7ff;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.conteudo-noticia {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.titulo-noticia {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #7ec8ff;
+}
+
+.imagem-noticia {
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.btn-compartilhar {
+  background-color: #7ec8ff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: #07182f;
+  font-weight: bold;
+}
+
+.texto-noticia p {
+  margin-bottom: 15px;
+  font-size: 17px;
+}
+
+.comentarios {
+  margin-top: 40px;
+}
+
+.comentarios h2 {
+  color: #aaf0ff;
+}
+
+#formComentario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#formComentario input,
+#formComentario textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0d2b4c;
+  color: #e0f7ff;
+}
+
+#formComentario button {
+  background-color: #7ec8ff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #07182f;
+}
+
+.comentario {
+  background-color: #0e2948;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.comentario p {
+  margin-bottom: 5px;
+}
+
+.btn-excluir {
+  background-color: #ff5c5c;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 6px;
+}
+
+.btn-excluir:hover {
+  background-color: #e03d3d;
+}
+
+.recomendacoes {
+  margin-top: 50px;
+}
+
+.outras-noticias {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.mini-noticia {
+  position: relative;  /* necessário para o título ser posicionado dentro */
+  width: 48%;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(7,24,47,0.9);
+  transition: transform 0.2s;
+  color: white; /* título branco */
+  text-decoration: none;
+}
+
+.mini-noticia:hover {
+  transform: scale(1.02);
+}
+
+.mini-noticia img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.mini-noticia h3 {
+  position: absolute;       /* fica por cima da imagem */
+  bottom: 8px;              /* colado embaixo */
+  left: 8px;                /* margem da esquerda */
+  margin: 0;
+  padding: 4px 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  /* Fundo semitransparente para melhorar legibilidade */
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  max-width: calc(100% - 16px);
+  pointer-events: none;     /* evita que o título bloqueie clique na mini-notícia */
+}
