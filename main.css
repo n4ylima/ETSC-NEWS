@@ -717,3 +717,17 @@ max-width: 100%;
   max-width: calc(100% - 16px);
   pointer-events: none;     /* evita que o título bloqueie clique na mini-notícia */
 }
+@media (max-width: 767px) {
+  
+  .mini-noticia {
+    width: 100%;
+  }
+
+  .mini-noticia img {
+    height: auto;
+  }
+
+  .outras-noticias {
+    flex-direction: column;
+  }
+}
